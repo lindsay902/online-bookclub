@@ -37,16 +37,33 @@ export default function CreatePost() {
             uploadTask.on("state_changed", (snapshot) => {
                 //progress function 1%, 2%...
 
-                const progress = Math.round((snapshot.bytesTransferred/snapshot.totalBytes)*100);
+                const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes)*100);
 
                 setProgress(progress);
             }, (error) => {
                 console.log(error);
             }, () => {
                 //get download url and post
-                storage.ref("images").child(`${imageName}.jpg`)
-                .getDownloadURL();
-            })
+
+                storage
+                    .ref("images")
+                    .child(`${imageName}.jpg`)
+                    .getDownloadURL()
+                    .then((imageUrl) => {
+                        db.collection("posts").add({
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                            caption: caption,
+                            photoUrl: imageUrl,
+                            username: user.email.replace("@gmail.com", ""),
+                            profileUrl: user.photoURL
+                        });
+                });
+
+                    setCaption("");
+                    setProgress(0);
+                    setImage(null);
+
+            });
         }
     };
 
@@ -84,8 +101,9 @@ export default function CreatePost() {
                         <button 
                             className="createPost_uploadBtn" 
                             onClick={handleUpload}
-                            style={{ color: caption ? "#000" : "lightgrey" }} >
-                            Upload
+                            style={{ color: caption ? "#000" : "lightgrey" }} 
+                        >
+                            {`Upload ${progress !== 0 ? progress: ""}`}
                         </button>
                     </div>
                 </div>
