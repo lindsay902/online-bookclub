@@ -9,7 +9,7 @@ export default function Navbar() {
 
     return (
         <div className="navbar">
-            <p>Books & Babes</p>
+            <p>Online Bookclub</p>
 
             {user ? (
                 <img alt="userphoto" className="navbar_image" src={user.photoURL} />

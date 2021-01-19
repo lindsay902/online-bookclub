@@ -1,0 +1,19 @@
+.commentInput {
+    display: flex;
+    justify-content: space-between;
+}
+
+.commentInputTextarea {
+    border: none;
+    width: 100%;
+    resize: none;
+    margin: 8px 0px;
+}
+
+.commentInputTextarea:focus {
+    outline: none;
+}
+
+.commentInputBtn {
+    background-color: white;
+}

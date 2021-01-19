@@ -1,6 +1,8 @@
 import React from 'react';
 import "./style.css";
 import { Comment } from '../../components';
+import { db, storage } from '../../firebase';
+import CommentInput from '../../components/comment-input';
 
 
 export default function Post({
@@ -11,6 +13,31 @@ export default function Post({
     caption, 
     comments
 }) {
+
+    const deletePost = () => {
+        const imageRef = storage.refFromURL(photoURL);
+
+        imageRef
+            .delete()
+            .then(function () {
+                console.log('Your post has been deleted');
+            })
+            .catch(function (error) {
+                console.log(`Error ${error}`);
+            });
+
+        db.collection("posts")
+            .doc(id)
+            .delete()
+            .then(function () {
+                console.log('Your post has been deleted');
+            })
+            .catch(function (error) {
+                console.log(`Error ${error}`);
+            });
+
+
+    };
     
     
     return (
@@ -25,7 +52,7 @@ export default function Post({
                     </p>
                 </div>
                 
-                <button className="postDelete">
+                <button className="postDelete" onClick={deletePost}>
                     Delete
                 </button>
                 
@@ -43,6 +70,8 @@ export default function Post({
                     {caption}
                 </p>
             </div>
+
+            <CommentInput id={id}/>
 
             {comments ? (
                 comments.map((comment) => (
