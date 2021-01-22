@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./style.css";
 import { Comment } from '../../components';
 import { db, storage } from '../../firebase';
 import CommentInput from '../../components/comment-input';
+import { UserContext } from '../../context/user';
 
 
 export default function Post({
@@ -13,6 +14,8 @@ export default function Post({
     caption, 
     comments
 }) {
+
+    const [user, setUser] = useContext(UserContext).user;
 
     const deletePost = () => {
         const imageRef = storage.refFromURL(photoURL);
@@ -63,23 +66,23 @@ export default function Post({
 
             <div>
                 <p>
-                    <span style={{ fontWeight: "500", marginRight: "4px" }}
-                    >
+                    <span style={{ fontWeight: "500", marginRight: "4px" }}>
                         {username}
                     </span>
                     {caption}
                 </p>
             </div>
 
-            <CommentInput id={id}/>
-
             {comments ? (
                 comments.map((comment) => (
-                <Comment username={comment.username} caption={caption.username}/>  
+                <Comment username={comment.username} caption={comment.comment} />  
                 ))
             ) : (
                 <div></div>
             )}
+
+            {user ? <CommentInput comments={comments} id={id}/> : <div></div>}
+            
 
         </div>
     );

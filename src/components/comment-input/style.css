@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+
 .commentInput {
     display: flex;
     justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+
 }
 
 .commentInputTextarea {
@@ -8,6 +12,7 @@
     width: 100%;
     resize: none;
     margin: 8px 0px;
+    font-family: "Poppins", sans-serif;
 }
 
 .commentInputTextarea:focus {
@@ -15,5 +20,18 @@
 }
 
 .commentInputBtn {
-    background-color: white;
+    background-color: #dde0eb;
+    max-width: 150px;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+
+.commentInputBtn:focus {
+    outline: none;
 }

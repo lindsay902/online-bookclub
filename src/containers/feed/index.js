@@ -25,6 +25,7 @@ export default function Feed(props) {
                 username={post.username}
                 photoURL={post.photoUrl}
                 caption={post.caption}
+                comments={post.comments}
                 />
             })}
         </div>
