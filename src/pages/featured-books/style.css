@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+
+
+.books-display-background {
+    background-size: cover;
+    background-position: 50%;
+    background-color: rgba(36, 154, 180, 0.25);
+}
+
+h1 {
+    font-family: "Coiny", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    color: #249ab4;
+}
+
+.book-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 5rem;
+}
+
+.book {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+.book-cover-image {
+    width: 7.5rem;
+    z-index: 2;
+    margin-bottom: -3rem;
+}
+
+.bookText {
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 25%;
+    padding-top: 3rem;
+    width: 15rem;
+    height: 10rem;
+    margin-bottom: 10%;
+}

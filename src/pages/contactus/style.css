@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+
+.contactBackground {
+    background-size: cover;
+    background-position: 50%;
+    background-color: #249ab4;
+}
+
+.contactUs {
+    font-family: "Coiny", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    padding-top: 12rem;
+}
+
+h4 {
+    line-height: 2;
+}
+
+.socialFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center, space-evenly;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 15%;
+}
+
+.igLogo {
+    max-width: 2em;
+}

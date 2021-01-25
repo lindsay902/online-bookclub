@@ -63,7 +63,7 @@ export default function CreatePost() {
                     setProgress(0);
                     setImage(null);
 
-                    document.getElementById('image-previeww').style.display = 'none'
+                    document.getElementById('image-preview').style.display = 'none'
 
             });
         }

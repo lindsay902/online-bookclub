@@ -1,3 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
+
+/*
 .home {
-    background-color: #f3eff2;
+    background-color: #fddada;
+} */
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.349),
+        rgba(255, 253, 253, 0.164)
+      ),
+        url("https://media-public.canva.com/MADQ5v2TgcM/1/screen_2x.jpg");
+    opacity: 0.85;
+    z-index: -1
+}
+
+.heartImage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 35%;
+    max-height: 60%;
+    z-index: -1;
+}
+
+.logo {
+    font-family: "Coiny", serif;
+    color: #249ab4;
+    font-size: 10vw;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    max-width: 35%;
+    text-align: center;
+    line-height:0.9em;
+    z-index: 2;
 }
