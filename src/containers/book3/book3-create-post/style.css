@@ -1,0 +1,48 @@
+.createPost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.createPost_loggedIn {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 4px;
+    padding: 12px 16px;
+
+}
+
+.createPost_imageUpload > input {
+    display: none;
+}
+
+.createPost_uploadBtn {
+    border: none;
+    background-color: white;
+}
+
+.createPost_loggedInBottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.createPost_textarea {
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 6px;
+    font-family: "Poppins", sans-serif;
+}
+
+.createPost_textarea :focus {
+    outline: none;
+}
+
+#image-preview {
+    display: none;
+    height: 80px;
+    margin: 12px, 0px;
+    border-radius: 4px;
+}

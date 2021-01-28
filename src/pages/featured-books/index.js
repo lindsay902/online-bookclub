@@ -6,7 +6,7 @@ class FeaturedBooks extends React.Component {
         super(props);
         this.state = {
         books: [
-            {id: 1, title: 'Home Before Dark', author: 'Riley Sager', imageSrc:'https://images3.penguinrandomhouse.com/cover/9781524745172'},
+            {id: 1, title: 'Home Before Dark', author: 'Riley Sager', imageSrc:'https://images3.penguinrandomhouse.com/cover/9781524745172', href:'./book1'},
             {id: 2, title: 'A Promised Land', author: 'Barack Obama', imageSrc:'https://images2.penguinrandomhouse.com/cover/9781524763169'},
             {id: 3, title: 'One Day in December', author: 'Josie Silver', imageSrc: 'https://images3.penguinrandomhouse.com/cover/9780525574682'},
         ]
@@ -33,7 +33,7 @@ class FeaturedBooks extends React.Component {
                                     <h3>by {book.author}</h3>
                                     <br></br>
 
-                                    <h6>Click here to join the discussion</h6>
+                                <h6>Click <a href={book.href}>here</a> to join the discussion</h6>
                                 </div>
                             </div>
                         ))}

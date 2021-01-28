@@ -1,18 +1,15 @@
-//for uploading posts with photos - may use later.
-
 import React, { useContext } from 'react';
 import "./style.css";
-import { Comment } from '../../components';
-import { db, storage } from '../../firebase';
-import CommentInput from '../../components/comment-input';
-import { UserContext } from '../../context/user';
+import { Comment } from '../../../components';
+import { db, storage } from '../../../firebase';
+import { Book2CommentInput } from '../../../components';
+import { UserContext } from '../../../context/user';
 
 
-export default function Post({
+export default function Book2Post({
     profileUrl, 
     username, 
     id, 
-    photoURL, 
     caption, 
     comments
 }) {
@@ -20,9 +17,9 @@ export default function Post({
     const [user, setUser] = useContext(UserContext).user;
 
     const deletePost = () => {
-        const imageRef = storage.refFromURL(photoURL);
+        const idRef = storage.ref(id);
 
-        imageRef
+        idRef
             .delete()
             .then(function () {
                 console.log('Your post has been deleted');
@@ -31,7 +28,7 @@ export default function Post({
                 console.log(`Error ${error}`);
             });
 
-        db.collection("posts")
+        db.collection("book2posts")
             .doc(id)
             .delete()
             .then(function () {
@@ -62,9 +59,7 @@ export default function Post({
                 </button>
                 
             </div>
-            <div className="postCenter">
-                <img className="postPhotoUrl" alt="postedPhoto" src={photoURL} />
-            </div>
+         
 
             <div>
                 <p>
@@ -83,7 +78,7 @@ export default function Post({
                 <div></div>
             )}
 
-            {user ? <CommentInput comments={comments} id={id}/> : <div></div>}
+            {user ? <Book2CommentInput comments={comments} id={id}/> : <div></div>}
             
 
         </div>

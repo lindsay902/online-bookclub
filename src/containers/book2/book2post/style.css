@@ -1,0 +1,46 @@
+.post {
+    background-color: white;
+    max-width: 600px;
+    width: 90vw;
+    padding: 16px;
+    margin-bottom: 8px;
+}
+
+.postHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postHeaderLeft {
+    display: flex;
+    align-items: center;
+}
+
+.postProfilePic {
+    height: 35px;
+    border-radius: 8px;
+}
+
+.postDelete {
+    background-color: red;
+    max-width: 150px;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.postDelete:focus {
+    outline: none;
+}
+
+.postPhotoUrl {
+    width: 100%;
+    object-fit: cover;
+    margin: 16px 0px;
+}
+

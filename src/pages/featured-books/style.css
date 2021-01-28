@@ -45,3 +45,7 @@ h1 {
     height: 10rem;
     margin-bottom: 10%;
 }
+
+a:visited {
+    color:rgba(36, 154, 180, 0.25);
+}

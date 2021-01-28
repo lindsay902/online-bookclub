@@ -1,11 +1,20 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 12px 24px;
+    padding: 1rem 2rem;
     background-color: white;
 }
 
 .navbar_image {
     height: 35px;
     border-radius: 8px;
+}
+
+.onlineBookclub {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.onlineBookclub:visited {
+    color: black;
 }
