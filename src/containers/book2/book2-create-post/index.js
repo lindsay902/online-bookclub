@@ -84,7 +84,7 @@ export default function Book2CreatePost() {
             ) : (
                 <div>
                     <SignInBtn />
-                    <p style={{ marginLeft: "12px" }}>to Post & Comment</p>
+                    <p style={{ marginLeft: "12px" }}>to post & comment</p>
                 </div>
             )}
             

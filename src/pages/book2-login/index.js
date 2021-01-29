@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import { Navbar } from '../../containers/';
-import { Book1Feed, Book1CreatePost } from '../../containers'
+import { Book2Feed, Book2CreatePost } from '../../containers'
 import { db } from '../../firebase';
 
-export default function Book1LoginPage() {
+export default function Book2LoginPage() {
     const [bookDetails, setBookDetails] = useState([])
         
 
         useEffect(() => {
-            db.collection("currentbooks").where("href", "==", "./book1")
+            db.collection("currentbooks").where("href", "==", "./book2")
             .onSnapshot(snapshot => {
                 const bookDetails = snapshot.docs.map(doc => ({
                     id: doc.id,
@@ -48,8 +48,8 @@ export default function Book1LoginPage() {
                     )}
                     
                 </div>
-            <Book1CreatePost />
-            <Book1Feed />
+            <Book2CreatePost />
+            <Book2Feed />
         </div>
     );
 }

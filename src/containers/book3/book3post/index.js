@@ -54,9 +54,11 @@ export default function Book3Post({
                     </p>
                 </div>
                 
+                {user ? 
                 <button className="postDelete" onClick={deletePost}>
                     Delete
                 </button>
+                : <div></div>}
                 
             </div>
          

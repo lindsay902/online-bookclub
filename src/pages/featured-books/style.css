@@ -19,9 +19,9 @@ h1 {
 
 .book-display {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     padding-bottom: 5rem;
 }
 
@@ -40,7 +40,7 @@ h1 {
     border: 1px solid white;
     background-color: white;
     border-radius: 25%;
-    padding-top: 3rem;
+    padding-top: 4rem;
     width: 15rem;
     height: 10rem;
     margin-bottom: 10%;

@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { db } from '../../firebase';
 import './style.css';
 
-class FeaturedBooks extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        books: [
-            {id: 1, title: 'Home Before Dark', author: 'Riley Sager', imageSrc:'https://images3.penguinrandomhouse.com/cover/9781524745172', href:'./book1'},
-            {id: 2, title: 'A Promised Land', author: 'Barack Obama', imageSrc:'https://images2.penguinrandomhouse.com/cover/9781524763169'},
-            {id: 3, title: 'One Day in December', author: 'Josie Silver', imageSrc: 'https://images3.penguinrandomhouse.com/cover/9780525574682'},
-        ]
-    }
-    }
-    render() {
+
+    export default function CurrentBooks() {
+        const [books, setBooks] = useState([])
         
-     //loop throught each item in st
+        useEffect(() => {
+            db.collection("currentbooks").onSnapshot(snapshot => {
+                const books = snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }))
+
+                setBooks(books)
+                console.log(books);
+            })
+        }, []);
+
         return (
             <div>
                 <div className="books-display-background">
                     <h1 className="featuredBooks">Featured books</h1>
 
                     <div className="book-display">
-                        {this.state.books.map(book => (
-                            <div className="book">
+                        {books.map(book => {
+                            return (
+                                <div key={book.id} className="book">
                                 <img
-                                    src={book.imageSrc}
+                                    src={book.imageUrl}
                                     alt={book.alt}
                                     className="book-cover-image"
                                 />
@@ -36,18 +40,17 @@ class FeaturedBooks extends React.Component {
                                 <h6>Click <a href={book.href}>here</a> to join the discussion</h6>
                                 </div>
                             </div>
-                        ))}
+                            )
+                        }
+                            
+                        )}
                         
                     </div>
                 </div>
             </div>
-        
         );
     
-
     }
+   // }
 
 
-}
-
-export default FeaturedBooks;
